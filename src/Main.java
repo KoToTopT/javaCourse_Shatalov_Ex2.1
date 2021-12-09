@@ -14,7 +14,7 @@ public class Main {
         printMaxNum(arr);
 
         // Задание 4
-        System.out.println(arr.length);
+        printArrSumm(arr);
     }
 
     public static void printEven(int[] num){
@@ -28,9 +28,9 @@ public class Main {
 
     public static void printTwoDigitNum(int[] num){
         int len = num.length;
-        for (int i = 0; i < len; i++){
-            if (num[i] > 9)
-                System.out.println(num[i]);
+        for (int j : num) {
+            if (j > 9 && j < 100)
+                System.out.println(j);
         }
         System.out.println("-------------------------");
     }
@@ -38,12 +38,26 @@ public class Main {
     public static void printMaxNum(int[] num){
         int len = num.length;
         int max = 0;
-        for (int i = 0; i < len; i++){
-            if (num[i] > max)
-                max = num[i];
+
+        if (num.length == 0)
+            System.out.println("Задан пустой массив");
+        else max = num[0];
+
+        for (int j : num) {
+            if (j > max)
+                max = j;
         }
         System.out.println(max);
         System.out.println("-------------------------");
+    }
+
+    public static void printArrSumm(int[] num){
+        int len = num.length;
+        int sum = 0;
+        for (int j : num) {
+            sum += j;
+        }
+        System.out.println(sum);
     }
 
 }
